@@ -1,6 +1,6 @@
 /*
  * D3D11StateManager.cpp
- * 
+ *
  * This file is part of the "LLGL" project (Copyright (c) 2015-2019 by Lukas Hermanns)
  * See "LICENSE.txt" for license information.
  */
@@ -46,7 +46,7 @@ void D3D11StateManager::SetViewports(std::uint32_t numViewports, const Viewport*
     numViewports = std::min(numViewports, std::uint32_t(D3D11_VIEWPORT_AND_SCISSORRECT_OBJECT_COUNT_PER_PIPELINE));
 
     /* Check if D3D11_VIEWPORT and Viewport structures can be safely reinterpret-casted */
-    if (IsCompatibleToD3DViewport())
+    if constexpr (IsCompatibleToD3DViewport())
     {
         /* Now it's safe to reinterpret cast the viewports into D3D viewports */
         context_->RSSetViewports(numViewports, reinterpret_cast<const D3D11_VIEWPORT*>(viewportArray));

@@ -1,6 +1,6 @@
 /*
  * RenderContextFlags.h
- * 
+ *
  * This file is part of the "LLGL" project (Copyright (c) 2015-2019 by Lukas Hermanns)
  * See "LICENSE.txt" for license information.
  */
@@ -95,7 +95,7 @@ struct VideoModeDescriptor
     Especially OpenGL does not support custom swap chain sizes.
     If this value is 0, the video mode is invalid.
     */
-    std::uint32_t   swapChainSize   = 2;
+    std::uint32_t   swapChainSize   = 3;
 };
 
 /**

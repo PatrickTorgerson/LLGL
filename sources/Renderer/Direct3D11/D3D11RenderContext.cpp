@@ -1,6 +1,6 @@
 /*
  * D3D11RenderContext.cpp
- * 
+ *
  * This file is part of the "LLGL" project (Copyright (c) 2015-2019 by Lukas Hermanns)
  * See "LICENSE.txt" for license information.
  */
@@ -150,7 +150,7 @@ void D3D11RenderContext::CreateSwapChain(IDXGIFactory* factory, UINT samples)
         swapChainDesc.BufferCount                           = (videoMode.swapChainSize == 3 ? 2 : 1);
         swapChainDesc.OutputWindow                          = wndHandle.window;
         swapChainDesc.Windowed                              = TRUE;//(videoMode.fullscreen ? FALSE : TRUE);
-        swapChainDesc.SwapEffect                            = DXGI_SWAP_EFFECT_DISCARD;
+        swapChainDesc.SwapEffect                            = DXGI_SWAP_EFFECT_FLIP_DISCARD;
     }
     auto hr = factory->CreateSwapChain(device_.Get(), &swapChainDesc, swapChain_.ReleaseAndGetAddressOf());
     DXThrowIfFailed(hr, "failed to create DXGI swap chain");
